@@ -1,36 +1,51 @@
 package br.edu.unochapeco.crushinggrapes;
 
 import android.app.Activity;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import AndGraph.AGGameManager;
+import AndGraph.AGInputManager;
 
 
 public class MainActivity extends Activity {
 
     private AGGameManager manager;
 
-
+      
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        manager = new AGGameManager(this, false);
+        super.onCreate(savedInstanceState);
 
+        manager = new AGGameManager(this, false);
         manager.addScene(new IntroScene(manager));
         manager.addScene(new MenuScene(manager));
-
-        super.onCreate(savedInstanceState);
+        manager.addScene(new Credits(manager));
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return true;
+    public void onBackPressed() {
+        super.onBackPressed();
+        AGInputManager.vrTouchEvents.bBackButtonClicked = true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        return super.onOptionsItemSelected(item);
+    protected void onResume() {
+        super.onResume();
+        manager.onPause();
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        manager.onResume();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        manager.release();
+        manager = null;
     }
 }
