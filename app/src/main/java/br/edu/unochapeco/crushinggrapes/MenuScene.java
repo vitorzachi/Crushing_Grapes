@@ -20,6 +20,7 @@ public class MenuScene extends AGScene {
     @Override
     public void init() {
 
+
         botaocredits = createSprite(R.drawable.btnsobre, 1, 1);
         botaocredits.setScreenPercent(90, 20);
         botaocredits.vrPosition.fX = AGScreenManager.iScreenWidth / 2;
