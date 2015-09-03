@@ -53,6 +53,7 @@ public class Credits extends AGScene {
 
             vrGameManager.setCurrentScene(1);
             return;
+
         }
 
     }
