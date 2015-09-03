@@ -11,7 +11,7 @@ import AndGraph.AGSprite;
  */
 public class MenuScene extends AGScene {
 
-    private AGSprite botaojogar, botaocredits, botaosair = null;
+    private AGSprite fundo, botaojogar, botaocredits, botaosair = null;
 
     public MenuScene(AGGameManager pManager) {
         super(pManager);
@@ -19,7 +19,10 @@ public class MenuScene extends AGScene {
 
     @Override
     public void init() {
-
+        fundo = createSprite(R.drawable.teste, 1,1);
+        fundo.setScreenPercent(100, 100);
+        fundo.vrPosition.fX = AGScreenManager.iScreenWidth / 2;
+        fundo.vrPosition.fY = AGScreenManager.iScreenHeight / 2;
 
         botaocredits = createSprite(R.drawable.btnsobre, 1, 1);
         botaocredits.setScreenPercent(90, 20);
