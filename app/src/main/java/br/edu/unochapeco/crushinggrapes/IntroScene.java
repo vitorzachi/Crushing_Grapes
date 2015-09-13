@@ -30,8 +30,7 @@ public class IntroScene extends AGScene {
 
         nonoBepi.setScreenPercent(60, 40);
 
-        AGSoundManager.vrMusic.loadMusic("funiculi.mid", true);
-        AGSoundManager.vrMusic.play();
+        Som.somIntro();
     }
 
     @Override
