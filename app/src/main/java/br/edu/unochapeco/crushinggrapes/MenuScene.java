@@ -19,7 +19,7 @@ public class MenuScene extends AGScene {
 
     @Override
     public void init() {
-        fundo = createSprite(R.drawable.teste, 1,1);
+        fundo = createSprite(R.drawable.fundomenu, 1,1);
         fundo.setScreenPercent(100, 100);
         fundo.vrPosition.fX = AGScreenManager.iScreenWidth / 2;
         fundo.vrPosition.fY = AGScreenManager.iScreenHeight / 2;
@@ -29,7 +29,7 @@ public class MenuScene extends AGScene {
         botaocredits.vrPosition.fX = AGScreenManager.iScreenWidth / 2;
         botaocredits.vrPosition.fY = AGScreenManager.iScreenHeight / 2;
 
-        botaojogar = createSprite(R.drawable.bntjogar, 1, 1);
+        botaojogar = createSprite(R.drawable.btnjogar, 1, 1);
         botaojogar.setScreenPercent(90, 20);
         botaojogar.vrPosition.fX = AGScreenManager.iScreenWidth / 2;
         botaojogar.vrPosition.fY = botaocredits.vrPosition.fY + botaojogar.getSpriteHeight();
