@@ -22,6 +22,8 @@ public class MainActivity extends Activity {
         manager.addScene(new IntroScene(manager));
         manager.addScene(new MenuScene(manager));
         manager.addScene(new Credits(manager));
+        manager.addScene(new Game(manager));
+
     }
 
     @Override
