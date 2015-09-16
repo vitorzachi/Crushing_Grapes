@@ -60,7 +60,7 @@ public class MenuScene extends AGScene {
                 botaojogar.collide(AGInputManager.
                         vrTouchEvents.getLastPosition())){
 
-            vrGameManager.setCurrentScene(1);
+            vrGameManager.setCurrentScene(3);
             return;
         }
         if (AGInputManager.vrTouchEvents.screenClicked() &&
