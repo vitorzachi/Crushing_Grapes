@@ -15,8 +15,8 @@ public class Som {
 
     private static final String somIntro = "funiculi.mid";
     private static final String somJogo = "tarantella.mid";
-    private static final String[] sonsAleatorios = {"barucha.mp3", "esqueceujapona.mp3", "tchucodenovo.mp3"};
-    private static final String[] sonsFalha = {"porcocane.mp3", "sacramento.mp3"};
+    private static final String[] sonsAleatorios = {"barucha.mp3", "esqueceujapona.mp3", "tchucodenovo.mp3", "vaicarpir.mp3"};
+    private static final String[] sonsFalha = {"porcocane.mp3", "sacramento.mp3", "vinho.mp3", "velho.mp3", "porco.mp3"};
 
     /**
      * Executa o som da intro.

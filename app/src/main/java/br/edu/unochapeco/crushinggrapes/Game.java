@@ -19,6 +19,7 @@ import br.edu.unochapeco.crushinggrapes.comp.Grape;
  */
 public class Game extends AGScene {
     private AGTimer timerCreateGrape;
+    private AGTimer timerSomAleatorio;
     private List<Grape> listUvas;
     private Random sorteioPosUva;
     private Random sorteioTipoUva;
@@ -43,6 +44,9 @@ public class Game extends AGScene {
 
         timerCreateGrape = new AGTimer();
         timerCreateGrape.restart(500);
+
+        timerSomAleatorio = new AGTimer();
+        timerSomAleatorio.restart(20 * 1000);// 20 segundos
 
         this.sorteioPosUva = new Random();
         this.sorteioTipoUva = new Random();
@@ -140,12 +144,21 @@ public class Game extends AGScene {
 
                     if (g.isGrapeGood())
                         placar++;
-                    else
+                    else {
                         --placar;
-
+                        Som.somFalha();
+                    }
                     break;
                 }
             }
+        }
+    }
+
+    private void executaSomAleatorio(){
+        timerSomAleatorio.update();
+        if(timerSomAleatorio.isTimeEnded()){
+            Som.somAleatorio();
+            timerSomAleatorio.restart();
         }
     }
 
@@ -155,6 +168,7 @@ public class Game extends AGScene {
         criarUvasRandom();
         moverUva();
         tratarUvasEsmagadas();
+        executaSomAleatorio();
     }
 
 
